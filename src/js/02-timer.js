@@ -32,6 +32,7 @@ const currentTime = new Date();
 const DELAY = 1000;
 let intervalId = null;
 let onStarted = false;
+let date = '';
 
 refs.startBtn.disabled = true;
 
