@@ -1,3 +1,5 @@
+import '../css/01-color-switcher.css';
+
 const DELAY = 1000;
 let intervalId = null;
 
