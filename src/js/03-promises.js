@@ -5,12 +5,12 @@ const refs = {
   form: document.querySelector('form'),
 };
 
-refs.form.addEventListener('submit', () => {
-  event.preventDefault();
+refs.form.addEventListener('submit', evt => {
+  evt.preventDefault();
 
-  let delay = Number(refs.form.delay.value);
-  const step = Number(refs.form.step.value);
-  const amount = Number(refs.form.amount.value);
+  let delay = Number(evt.currentTarget.delay.value);
+  const step = Number(evt.currentTarget.step.value);
+  const amount = Number(evt.currentTarget.amount.value);
 
   for (let position = 1; position <= amount; position += 1) {
     createPromise(position, delay)

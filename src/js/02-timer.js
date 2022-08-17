@@ -12,6 +12,12 @@ const options = {
     date = selectedDates[0];
     checkIsValidDate(date);
   },
+  onOpen() {
+    clearInterval(intervalId);
+    onStarted = false;
+    refs.startBtn.disabled = true;
+    updateTimer(0);
+  },
 };
 
 const refs = {
@@ -36,7 +42,7 @@ refs.startBtn.addEventListener('click', clickOnBtnStart);
 function clickOnBtnStart() {
   if (!onStarted) {
     onStarted = true;
-    updateTimer(countDelay(date, currentTime));
+    // updateTimer(countDelay(date, currentTime));
     startTimer();
     return;
   }
