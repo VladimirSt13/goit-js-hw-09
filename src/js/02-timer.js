@@ -57,9 +57,12 @@ function startTimer() {
     if (delay < 1000) {
       clearInterval(intervalId);
       onStarted = false;
+      refs.inputTime.disabled = false;
       return;
     }
   }, DELAY);
+  refs.inputTime.disabled = true;
+  refs.startBtn.disabled = true;
 }
 
 function checkIsValidDate(date) {
